@@ -1,23 +1,75 @@
-/* --- STILIZARE PROFESIONALĂ --- */
-
-/* Resetare de bază */
+/* --- RESETARE --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Un font mai modern */
-    color: #fff;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    background-color: #000; /* Fundal negru de siguranță */
+html {
+    scroll-behavior: smooth; /* Scroll lin când apeși pe butoane */
 }
 
-/* --- FUNDALUL ANIMAT CU EFECTE --- */
-/* --- FUNDALUL ANIMAT CU EFECTE --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+/* --- MENIUL DE NAVIGARE (NAVBAR) --- */
+.navbar {
+    position: fixed; /* Rămâne lipit sus */
+    top: 0;
+    width: 100%;
+    padding: 15px 30px; /* Puțin mai compact */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Deasupra la orice */
+    background: rgba(0, 0, 0, 0.85); /* Negru transparent */
+    backdrop-filter: blur(10px); /* Efect modern de sticlă */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links li a:hover {
+    color: #d4af37; /* Auriu la mouse over */
+}
+
+/* --- SECȚIUNEA 1: HERO (DESIGNUL TĂU) --- */
+.hero-section {
+    height: 100vh; /* Un ecran complet */
+    width: 100%;
+    position: relative; /* Important ca să țină fundalul în interior */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- FUNDALUL ANIMAT (Setările tale exacte) --- */
 .background-animat {
     position: absolute;
     top: 0;
@@ -28,34 +80,20 @@ body {
 
     background-image: 
         radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
-        url('images/logo-bg.jpeg');
+        url('images/logo-bg.jpeg'); /* <--- VERIFICĂ AICI NUMELE POZEI */
     
-    /* --- MODIFICĂRILE SUNT AICI --- */
-
-    /* 1. Schimbă 'cover' cu o valoare procentuală sau 'contain' */
-    /* 'contain' va arăta toată imaginea fără să o taie. */
-    /* Dacă vrei fix jumătate din lățimea ecranului, folosește '50%' */
     background-size: contain; 
-    
-    /* 2. Asigură-te că imaginea nu se repetă ca o faianță */
     background-repeat: no-repeat;
-
-    /* 3. Menține imaginea în centru */
     background-position: center center;
     
-    /* --- SFÂRȘIT MODIFICĂRI --- */
-    
     filter: brightness(1.2) contrast(1.1);
-
-    /* Am revenit la o animație mai subtilă, pentru că imaginea fiind mai mică,
-       o mișcare amplă arată ciudat */
+    
+    /* Animația ta fină */
     animation: miscareValuriProfi 8s ease-in-out infinite alternate;
 }
 
-/* --- DEFINIREA ANIMAȚIEI (Keyframes - Ajustat pentru imagine mică) --- */
 @keyframes miscareValuriProfi {
     0% {
-        /* Mișcare foarte fină de "plutire" */
         transform: scale(0.95) translateY(5px);
     }
     100% {
@@ -63,41 +101,67 @@ body {
     }
 }
 
-/* --- STILIZARE CONȚINUT (TEXT CU UMBRE) --- */
+/* --- CONȚINUT HERO --- */
 .container-continut {
-    height: 100%;
+    text-align: center;
+    z-index: 10;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+}
+
+p {
+    font-size: 1.3rem;
+    color: #ddd;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+footer {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* --- RESTUL SECȚIUNILOR (Ca să ai scroll) --- */
+.content-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    border-bottom: 1px solid #111;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    background-color: #000;
 }
 
-h1 {
-    font-size: 3rem; /* Text mai mare */
-    font-weight: 800; /* Text mai gros */
-    margin-bottom: 15px;
-    letter-spacing: 1px; /* Spațiu între litere pentru un look premium */
-    
-    /* UMBRĂ PROFI: O combinație de umbră dură și strălucire difuză */
-    text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.9), /* Umbra de definiție */
-        0 0 30px rgba(0,0,0,0.7);    /* Aura din spate pentru separare de fundal */
+.content-section h2 {
+    font-size: 2.5rem;
+    color: #d4af37; /* Titlu auriu */
+    margin-bottom: 20px;
 }
 
-p {
-    font-size: 1.3rem;
-    color: #ddd; /* Un alb puțin mai stins */
-    font-weight: 300;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-}
-
-footer {
-    position: absolute; /* Îl fixăm jos de tot */
-    bottom: 30px;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6); /* Transparent */
-    letter-spacing: 2px;
-    text-transform: uppercase; /* Litere mari pentru eleganță */
+/* --- ADAPTARE PENTRU TELEFON --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .nav-links {
+        margin-top: 15px;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    h1 { font-size: 2rem; }
 }
