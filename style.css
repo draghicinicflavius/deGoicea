@@ -38,18 +38,20 @@ body {
     filter: brightness(1.2) contrast(1.1);
 
     /* Animație mai rapidă (15s) și mai amplă */
-    animation: miscareValuriProfi 15s ease-in-out infinite alternate;
+    animation: miscareValuriProfi 5s ease-in-out infinite alternate;
 }
 
 /* --- DEFINIREA ANIMAȚIEI (Keyframes) --- */
+/* --- DEFINIREA ANIMAȚIEI (Keyframes - Ajustat pentru Zoom mai mic) --- */
 @keyframes miscareValuriProfi {
     0% {
-        /* Pleacă de la o scară puțin mai mare decât normal */
-        transform: scale(1.05) rotate(-1deg);
+        /* Pleacă aproape de mărimea naturală (1.0) */
+        /* Reducem rotația pentru a nu dezvălui marginile la scale mic */
+        transform: scale(1.02) rotate(-0.5deg);
     }
     100% {
-        /* Se apropie mai mult (zoom in) */
-        transform: scale(1.25) rotate(1deg);
+        /* Se apropie foarte puțin (doar 10% zoom în loc de 25%) */
+        transform: scale(1.10) rotate(0.5deg);
     }
 }
 
@@ -66,7 +68,7 @@ body {
 
 h1 {
     font-size: 3rem; /* Text mai mare */
-    font-weight: 700; /* Text mai gros */
+    font-weight: 800; /* Text mai gros */
     margin-bottom: 15px;
     letter-spacing: 1px; /* Spațiu între litere pentru un look premium */
     
