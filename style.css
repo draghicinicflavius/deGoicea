@@ -1,86 +1,159 @@
-/* --- CONFIGURARE GENERALĂ --- */
+/* Resetare de bază */
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
+
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #000;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Un font mai modern */
+
     color: #fff;
+
     height: 100vh;
+
     overflow: hidden;
+
     position: relative;
-    
-    /* CENTRARE PERFECTĂ */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    background-color: #000; /* Fundal negru de siguranță */
+
 }
 
-/* --- FUNDALUL CARE FACE "VALURI" --- */
+
+
+/* --- FUNDALUL ANIMAT CU EFECTE --- */
+
 .background-animat {
+
     position: absolute;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     z-index: -1;
 
-    /* Aici e poza ta cu extensia corectă */
-    background-image: url('logo.jpeg');
-    
-    background-size: contain; /* Se vede toată poza */
-    background-repeat: no-repeat;
+
+
+    /* TRUC PROFI: Suprapunem un gradient peste imagine */
+
+    /* Gradientul face colțurile negre (vignetă) și lasă centrul transparent */
+
+    background-image:
+
+        radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
+
+        url('images/logo-bg.jpeg');
+
+   
+
     background-position: center;
-    
-    opacity: 0.6; 
-    
-    /* ANIMAȚIA NOUĂ - EFECT DE VALURI 3D */
-    animation: valuri3D 8s ease-in-out infinite;
+
+    background-size: cover;
+
+   
+
+    /* Adăugăm puțină luminozitate și contrast imaginii de bază */
+
+    filter: brightness(1.2) contrast(1.1);
+
+
+
+    /* Animație mai rapidă (15s) și mai amplă */
+
+    animation: miscareValuriProfi 15s ease-in-out infinite alternate;
+
 }
 
-/* --- MAGIA 3D (Aici e efectul de plutire) --- */
-@keyframes valuri3D {
+
+
+/* --- DEFINIREA ANIMAȚIEI (Keyframes) --- */
+
+@keyframes miscareValuriProfi {
+
     0% {
-        /* Start: Normal */
-        transform: perspective(500px) rotate3d(1, 0, 0, 0deg) scale(1);
+
+        /* Pleacă de la o scară puțin mai mare decât normal */
+
+        transform: scale(1.05) rotate(-1deg);
+
     }
-    25% {
-        /* Se înclină puțin spre spate și stânga (ca pe un val) */
-        transform: perspective(500px) rotate3d(1, 1, 0, 3deg) scale(1.05);
-    }
-    50% {
-        /* Se îndreaptă și vine mai aproape */
-        transform: perspective(500px) rotate3d(0, 0, 0, 0deg) scale(1.1);
-    }
-    75% {
-        /* Se înclină spre față și dreapta */
-        transform: perspective(500px) rotate3d(-1, 1, 0, -3deg) scale(1.05);
-    }
+
     100% {
-        /* Revine la normal */
-        transform: perspective(500px) rotate3d(0, 0, 0, 0deg) scale(1);
+
+        /* Se apropie mai mult (zoom in) */
+
+        transform: scale(1.25) rotate(1deg);
+
     }
+
 }
 
-/* --- TEXTUL --- */
+
+
+/* --- STILIZARE CONȚINUT (TEXT CU UMBRE) --- */
+
 .container-continut {
-    z-index: 10;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
     text-align: center;
-    width: 100%;
+
+    padding: 20px;
+
 }
+
+
 
 h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
+
+    font-size: 3rem; /* Text mai mare */
+
+    font-weight: 700; /* Text mai gros */
+
     margin-bottom: 15px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 0 5px 15px #000; /* Umbră puternică */
+
+    letter-spacing: 1px; /* Spațiu între litere pentru un look premium */
+
+   
+
+    /* UMBRĂ PROFI: O combinație de umbră dură și strălucire difuză */
+
+    text-shadow:
+
+        2px 2px 4px rgba(0,0,0,0.9), /* Umbra de definiție */
+
+        0 0 30px rgba(0,0,0,0.7);    /* Aura din spate pentru separare de fundal */
+
 }
 
+
+
 p {
-    font-size: 1.5rem;
-    color: #ccc;
+
+    font-size: 1.3rem;
+
+    color: #ddd; /* Un alb puțin mai stins */
+
+    font-weight: 300;
