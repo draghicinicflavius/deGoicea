@@ -1,6 +1,4 @@
-/* --- STILIZARE & ANIMATIE SPECTACULOASĂ --- */
-
-/* 1. Resetare */
+/* --- CONFIGURARE GENERALĂ --- */
 * {
     margin: 0;
     padding: 0;
@@ -8,105 +6,81 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000;
     color: #fff;
     height: 100vh;
-    background-color: #000;
-    overflow: hidden; /* Ascunde marginile când imaginea se mărește */
+    overflow: hidden;
     position: relative;
-    display: flex; /* Centrare perfectă */
+    
+    /* CENTRARE PERFECTĂ */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* 2. FUNDALUL ANIMAT (Aici e magia) */
+/* --- FUNDALUL CARE FACE "VALURI" --- */
 .background-animat {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Trimitem în spate */
+    z-index: -1;
 
-    /* Gradient pentru efect dramatic (întunecat pe margini) */
-    background-image: 
-        radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 90%),
-        url('logo.jpeg'); /* VERIFICĂ NUMELE POZEI AICI! */
+    /* Aici e poza ta cu extensia corectă */
+    background-image: url('logo.jpeg');
     
-    background-position: center;
-    background-size: contain; /* Folosim CONTAIN ca să se vadă tot logo-ul */
+    background-size: contain; /* Se vede toată poza */
     background-repeat: no-repeat;
+    background-position: center;
     
-    /* Efecte vizuale */
-    opacity: 0.6; /* Transparență */
-    filter: contrast(1.2) brightness(1.1); /* Culori mai intense */
-
-    /* ANIMAȚIA NOUĂ: Mai rapidă (10s) și mai complexă */
-    animation: spectacolTotal 12s ease-in-out infinite alternate;
+    opacity: 0.6; 
+    
+    /* ANIMAȚIA NOUĂ - EFECT DE VALURI 3D */
+    animation: valuri3D 8s ease-in-out infinite;
 }
 
-/* 3. DEFINIREA MIȘCĂRII (Keyframes) */
-@keyframes spectacolTotal {
+/* --- MAGIA 3D (Aici e efectul de plutire) --- */
+@keyframes valuri3D {
     0% {
         /* Start: Normal */
-        transform: scale(1) rotate(0deg) translate(0, 0);
+        transform: perspective(500px) rotate3d(1, 0, 0, 0deg) scale(1);
     }
-    33% {
-        /* Pas 1: Se rotește ușor dreapta și se apropie */
-        transform: scale(1.1) rotate(3deg) translate(10px, 0);
+    25% {
+        /* Se înclină puțin spre spate și stânga (ca pe un val) */
+        transform: perspective(500px) rotate3d(1, 1, 0, 3deg) scale(1.05);
     }
-    66% {
-        /* Pas 2: Se rotește stânga și se apropie și mai mult */
-        transform: scale(1.2) rotate(-3deg) translate(-10px, 0);
+    50% {
+        /* Se îndreaptă și vine mai aproape */
+        transform: perspective(500px) rotate3d(0, 0, 0, 0deg) scale(1.1);
+    }
+    75% {
+        /* Se înclină spre față și dreapta */
+        transform: perspective(500px) rotate3d(-1, 1, 0, -3deg) scale(1.05);
     }
     100% {
-        /* Final: Zoom maxim dramatic */
-        transform: scale(1.35) rotate(0deg) translate(0, 0);
+        /* Revine la normal */
+        transform: perspective(500px) rotate3d(0, 0, 0, 0deg) scale(1);
     }
 }
 
-/* 4. CONȚINUTUL (Textul) */
+/* --- TEXTUL --- */
 .container-continut {
     z-index: 10;
     text-align: center;
     width: 100%;
-    padding: 20px;
 }
 
 h1 {
-    font-size: 3.5rem; /* Text gigant */
+    font-size: 3.5rem;
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    
-    /* Umbră 3D pentru text */
-    text-shadow: 
-        0 4px 6px rgba(0,0,0,0.9),
-        0 0 20px rgba(0,0,0,0.8);
+    text-shadow: 0 5px 15px #000; /* Umbră puternică */
 }
 
 p {
     font-size: 1.5rem;
     color: #ccc;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 5px rgba(0,0,0,1);
-}
-
-footer {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-    text-align: center;
-    font-size: 0.9rem;
-    color: gray;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-/* Ajustare pentru telefon */
-@media (max-width: 600px) {
-    h1 { font-size: 2.2rem; }
-    p { font-size: 1.1rem; }
-}
