@@ -33,18 +33,21 @@ body {
 .logo-text {
     font-size: 1.5rem;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: #fff;
-    text-transform: uppercase;
-}
-.g-auriu {
-    color: #d4af37; /* Codul pentru Auriu */
-    font-weight: bold; /* Îl facem și puțin mai gros */
+    /* Am șters 'text-transform: uppercase' ca să te lase să scrii "deGoicea" */
+    text-transform: none; 
 }
 
-.r-gri {
-    color: #a9a9a9; /* Codul pentru Gri (DarkGray) */
-    font-weight: bold;
+/* Stiluri speciale pentru literele colorate */
+.litera-g {
+    color: #d4af37; /* Auriu */
+    font-size: 1.7rem; /* Puțin mai mare pentru accent */
+}
+
+.litera-r {
+    color: #808080; /* Gri */
+    font-size: 1.7rem; /* Puțin mai mare pentru accent */
 }
 
 /* Opțional: Dacă vrei ca tot logo-ul să fie puțin mai mare să se vadă detaliile */
