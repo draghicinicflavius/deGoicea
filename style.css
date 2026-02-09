@@ -1,4 +1,6 @@
-/* RESETARE SI CENTRARE GENERALA */
+/* --- STILIZARE PROFESIONALĂ --- */
+
+/* Resetare de bază */
 * {
     margin: 0;
     padding: 0;
@@ -6,76 +8,86 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Un font mai modern */
     color: #fff;
-    
-    /* ACESTEA SUNT LINIILE CARE CENTREAZĂ TOTUL */
-    height: 100vh; /* Ocupă toată înălțimea ecranului */
-    display: flex;
-    justify-content: center; /* Centru orizontal */
-    align-items: center;     /* Centru vertical */
+    height: 100vh;
     overflow: hidden;
     position: relative;
+    background-color: #000; /* Fundal negru de siguranță */
 }
 
-/* --- LOGO ANIMAT (FUNDAL) --- */
+/* --- FUNDALUL ANIMAT CU EFECTE --- */
 .background-animat {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Stă în spate */
+    z-index: -1;
 
-    /* IMPORTANT: Am pus .png. Dacă nu apare, schimbă aici în .jpg */
-    background-image: url('logo-bg.jpeg');
+    /* TRUC PROFI: Suprapunem un gradient peste imagine */
+    /* Gradientul face colțurile negre (vignetă) și lasă centrul transparent */
+    background-image: 
+        radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
+        url('images/logo-bg.jpeg');
     
-    background-size: contain;
-    background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.5;
+    background-size: cover;
     
-    animation: pulsatie 6s ease-in-out infinite alternate;
+    /* Adăugăm puțină luminozitate și contrast imaginii de bază */
+    filter: brightness(1.2) contrast(1.1);
+
+    /* Animație mai rapidă (15s) și mai amplă */
+    animation: miscareValuriProfi 15s ease-in-out infinite alternate;
 }
 
-@keyframes pulsatie {
-    0% { transform: scale(0.95); opacity: 0.4; }
-    100% { transform: scale(1.05); opacity: 0.7; }
+/* --- DEFINIREA ANIMAȚIEI (Keyframes) --- */
+@keyframes miscareValuriProfi {
+    0% {
+        /* Pleacă de la o scară puțin mai mare decât normal */
+        transform: scale(1.05) rotate(-1deg);
+    }
+    100% {
+        /* Se apropie mai mult (zoom in) */
+        transform: scale(1.25) rotate(1deg);
+    }
 }
 
-/* --- TEXTUL (CONȚINUT) --- */
+/* --- STILIZARE CONȚINUT (TEXT CU UMBRE) --- */
 .container-continut {
-    z-index: 10; /* Stă în față */
-    text-align: center; /* Textul să fie centrat */
-    /* Umbră în spatele textului ca să se vadă clar peste orice zonă a pozei */
-    text-shadow: 0 4px 15px rgba(0,0,0, 0.8);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
 h1 {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 3rem; /* Text mai mare */
+    font-weight: 700; /* Text mai gros */
     margin-bottom: 15px;
+    letter-spacing: 1px; /* Spațiu între litere pentru un look premium */
+    
+    /* UMBRĂ PROFI: O combinație de umbră dură și strălucire difuză */
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.9), /* Umbra de definiție */
+        0 0 30px rgba(0,0,0,0.7);    /* Aura din spate pentru separare de fundal */
 }
 
 p {
-    font-size: 1.4rem;
-    color: #ddd;
-    margin-bottom: 40px;
+    font-size: 1.3rem;
+    color: #ddd; /* Un alb puțin mai stins */
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 footer {
-    position: absolute;
-    bottom: 20px;
+    position: absolute; /* Îl fixăm jos de tot */
+    bottom: 30px;
     font-size: 0.9rem;
-    color: gray;
+    color: rgba(255, 255, 255, 0.6); /* Transparent */
     letter-spacing: 2px;
-    width: 100%;
-    text-align: center;
-}
-
-/* Ajustare pentru telefoane */
-@media (max-width: 600px) {
-    h1 { font-size: 2rem; }
-    p { font-size: 1.1rem; }
+    text-transform: uppercase; /* Litere mari pentru eleganță */
 }
