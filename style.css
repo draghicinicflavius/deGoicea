@@ -27,7 +27,7 @@ body {
     z-index: -1; /* În spatele textului */
 
     /* Încărcăm poza (Asigură-te că se numește logo.png în folderul images) */
-    background-image: url('images/logo.png');
+    background-image: url('images/logo-bg.jpeg');
     
     /* TRUCUL MAGIC: Contain nu taie poza! O lasă întreagă în centru. */
     background-size: contain; 
