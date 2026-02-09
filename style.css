@@ -37,6 +37,20 @@ body {
     color: #fff;
     text-transform: uppercase;
 }
+.g-auriu {
+    color: #d4af37; /* Codul pentru Auriu */
+    font-weight: bold; /* Îl facem și puțin mai gros */
+}
+
+.r-gri {
+    color: #a9a9a9; /* Codul pentru Gri (DarkGray) */
+    font-weight: bold;
+}
+
+/* Opțional: Dacă vrei ca tot logo-ul să fie puțin mai mare să se vadă detaliile */
+.logo-text {
+    font-size: 1.3rem; /* Ajustează mărimea aici dacă e nevoie */
+}
 
 .nav-links {
     list-style: none;
