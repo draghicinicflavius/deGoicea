@@ -17,6 +17,7 @@ body {
 }
 
 /* --- FUNDALUL ANIMAT CU EFECTE --- */
+/* --- FUNDALUL ANIMAT CU EFECTE --- */
 .background-animat {
     position: absolute;
     top: 0;
@@ -25,33 +26,40 @@ body {
     height: 100%;
     z-index: -1;
 
-    /* TRUC PROFI: Suprapunem un gradient peste imagine */
-    /* Gradientul face colțurile negre (vignetă) și lasă centrul transparent */
     background-image: 
         radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
         url('images/logo-bg.jpeg');
     
-    background-position: center;
-    background-size: cover;
+    /* --- MODIFICĂRILE SUNT AICI --- */
+
+    /* 1. Schimbă 'cover' cu o valoare procentuală sau 'contain' */
+    /* 'contain' va arăta toată imaginea fără să o taie. */
+    /* Dacă vrei fix jumătate din lățimea ecranului, folosește '50%' */
+    background-size: contain; 
     
-    /* Adăugăm puțină luminozitate și contrast imaginii de bază */
+    /* 2. Asigură-te că imaginea nu se repetă ca o faianță */
+    background-repeat: no-repeat;
+
+    /* 3. Menține imaginea în centru */
+    background-position: center center;
+    
+    /* --- SFÂRȘIT MODIFICĂRI --- */
+    
     filter: brightness(1.2) contrast(1.1);
 
-    /* Animație mai rapidă (15s) și mai amplă */
-    animation: miscareValuriProfi 5s ease-in-out infinite alternate;
+    /* Am revenit la o animație mai subtilă, pentru că imaginea fiind mai mică,
+       o mișcare amplă arată ciudat */
+    animation: miscareValuriProfi 8s ease-in-out infinite alternate;
 }
 
-/* --- DEFINIREA ANIMAȚIEI (Keyframes) --- */
-/* --- DEFINIREA ANIMAȚIEI (Keyframes - Ajustat pentru Zoom mai mic) --- */
+/* --- DEFINIREA ANIMAȚIEI (Keyframes - Ajustat pentru imagine mică) --- */
 @keyframes miscareValuriProfi {
     0% {
-        /* Pleacă aproape de mărimea naturală (1.0) */
-        /* Reducem rotația pentru a nu dezvălui marginile la scale mic */
-        transform: scale(1.02) rotate(-0.5deg);
+        /* Mișcare foarte fină de "plutire" */
+        transform: scale(0.95) translateY(5px);
     }
     100% {
-        /* Se apropie foarte puțin (doar 10% zoom în loc de 25%) */
-        transform: scale(1.10) rotate(0.5deg);
+        transform: scale(1.05) translateY(-5px);
     }
 }
 
