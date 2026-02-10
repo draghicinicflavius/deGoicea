@@ -178,6 +178,14 @@ footer {
     margin: 0;
     border-bottom: 1px solid #222;
 }
+.nota-disclaimer{
+    margin-top: 30px;
+    text-align: center;
+    font-style: italic;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #808080;
+}
 
 /* STIL CARUSEL (POZE) */
 .carousel {
@@ -261,9 +269,49 @@ footer {
     transition: 0.3s;
 }
 
+/* --- Buton Compact pentru Foto-Video --- */
+.btn-rezerva1 {
+    display: inline-block;
+    
+    /* 1. AICI ESTE SECRETUL: Micsoram spațiul intern */
+    padding: 5px 15px;   /* Era probabil 10px 25px. Acum e mult mai strâns */
+    
+    /* 2. Micsoram puțin scrisul să fie elegant */
+    font-size: 0.75rem;  /* Echivalentul a aprox 12px */
+    
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
+    
+    /* 3. Ne asigurăm că stă centrat și nu împinge prea tare */
+    margin-left: 10px; 
+    white-space: nowrap; /* Să nu se rupă textul pe două rânduri */
+}
+
+.btn-rezerva1:hover {
+    background-color: #d4af37;
+    color: #000;
+}
+
 .btn-rezerva:hover {
     background-color: #d4af37;
     color: #000;
+}
+#oferte-video .pachet-card {
+    /* 1. Le dăm o înălțime minimă mai mare */
+    min-height: 350px;  /* Poți crește valoarea asta dacă le vrei și mai lungi */
+    
+    /* 2. Adăugăm mai mult "aer" în interior (spațiu sus și jos) */
+    padding: 50px 20px;
+
+    /* 3. Ne asigurăm că elementele din interior se așează frumos pe mijloc */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Le centrează pe verticală în spațiul nou creat */
+    gap: 30px; /* Spațiu mai mare între titlu și rândul cu preț/buton */
 }
 
 /* --- 7. REGULI SPECIALE PENTRU TELEFON (IMPORTANT!) --- */
