@@ -184,3 +184,132 @@ footer {
     }
     h1 { font-size: 2rem; }
 }
+/* --- OFERTE & CARUSEL --- */
+.oferte-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* Spațiu între pachete */
+    margin-top: 30px;
+    width: 100%;
+}
+
+.pachet-card {
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px; /* Lățimea unui card */
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.pachet-card:hover {
+    transform: translateY(-5px); /* Se ridică puțin la mouse over */
+    border-color: #d4af37;
+}
+
+.pachet-card h3 {
+    padding: 15px;
+    background-color: #000;
+    color: #d4af37;
+    margin: 0;
+    border-bottom: 1px solid #222;
+}
+
+/* CARUSEL LOGICA */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Înălțimea pozei */
+    background-color: #000;
+}
+
+.carousel-images {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Umple spațiul fără să deformeze poza */
+    display: none; /* Ascundem toate pozele */
+}
+
+/* Doar poza cu clasa 'active' se vede */
+.carousel-images img.active {
+    display: block;
+    animation: fadeEffect 0.5s; /* Efect de tranziție fină */
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0.4} 
+    to {opacity: 1}
+}
+
+/* Săgețile Stânga/Dreapta */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    border: none;
+    background-color: rgba(0,0,0,0.3);
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: #d4af37;
+}
+
+/* DETALII PRET */
+.detalii-pret {
+    padding: 20px;
+    text-align: center;
+}
+
+.pret {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.lista-beneficii {
+    list-style: none;
+    margin-bottom: 20px;
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.btn-rezerva {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-rezerva:hover {
+    background-color: #d4af37;
+    color: #000;
+}

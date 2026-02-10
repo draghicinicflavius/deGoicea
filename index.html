@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>deGoicea Photography</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo-text">
-    deGoicea Photo<span class="litera-g">G</span><span class="litera-r">R</span>aphy
-</div>
+            deGoicea Photo<span class="litera-g">G</span><span class="litera-r">R</span>aphy
+        </div>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <ul class="nav-links">
-            <li><a href="#home">Acasa</a></li>
+            <li><a href="#home">Acasă</a></li>
             <li><a href="#oferte-foto">Oferte Foto</a></li>
             <li><a href="#oferte-video">Oferte Foto-Video</a></li>
             <li><a href="#photoboot">Photobooth</a></li>
@@ -28,8 +36,87 @@
     </section>
 
     <section id="oferte-foto" class="content-section">
-        <h2>Oferte Foto</h2>
-        <p>Aici vor apărea pachetele doar pentru fotografie.</p>
+        <h2>Servicii Fotografie</h2>
+        <p>Surprindem emoția, nu doar momentul.</p>
+
+        <div class="oferte-container">
+            
+            <div class="pachet-card">
+                <h3>Majorat / Petreceri</h3>
+                
+                <div class="carousel" id="carousel-majorat">
+                    <div class="carousel-images">
+                        <img src="https://via.placeholder.com/400x300/000000/FFFFFF?text=Majorat+1" alt="Foto 1" class="active">
+                        <img src="https://via.placeholder.com/400x300/333333/FFFFFF?text=Majorat+2" alt="Foto 2">
+                        <img src="https://via.placeholder.com/400x300/555555/FFFFFF?text=Majorat+3" alt="Foto 3">
+                        <img src="https://via.placeholder.com/400x300/777777/FFFFFF?text=Majorat+4" alt="Foto 4">
+                    </div>
+                    <button class="prev" onclick="mutaSlide('carousel-majorat', -1)">&#10094;</button>
+                    <button class="next" onclick="mutaSlide('carousel-majorat', 1)">&#10095;</button>
+                </div>
+
+                <div class="detalii-pret">
+                    <span class="pret">1400 - 1600 LEI</span>
+                    <ul class="lista-beneficii">
+                        <li>Fotografiere nelimitată</li>
+                        <li>Editare profesională</li>
+                        <li>Livrare rapidă online</li>
+                    </ul>
+                    <a href="#contact" class="btn-rezerva">Cere Ofertă</a>
+                </div>
+            </div>
+
+            <div class="pachet-card">
+                <h3>Botez</h3>
+                
+                <div class="carousel" id="carousel-botez">
+                    <div class="carousel-images">
+                        <img src="https://via.placeholder.com/400x300/000000/FFFFFF?text=Botez+1" alt="Foto 1" class="active">
+                        <img src="https://via.placeholder.com/400x300/333333/FFFFFF?text=Botez+2" alt="Foto 2">
+                        <img src="https://via.placeholder.com/400x300/555555/FFFFFF?text=Botez+3" alt="Foto 3">
+                    </div>
+                    <button class="prev" onclick="mutaSlide('carousel-botez', -1)">&#10094;</button>
+                    <button class="next" onclick="mutaSlide('carousel-botez', 1)">&#10095;</button>
+                </div>
+
+                <div class="detalii-pret">
+                    <span class="pret">3000 LEI</span>
+                    <ul class="lista-beneficii">
+                        <li>Slujbă + Petrecere</li>
+                        <li>Ședință foto bebe</li>
+                        <li>Stick USB personalizat</li>
+                    </ul>
+                    <a href="#contact" class="btn-rezerva">Cere Ofertă</a>
+                </div>
+            </div>
+
+            <div class="pachet-card">
+                <h3>Nuntă</h3>
+                
+                <div class="carousel" id="carousel-nunta">
+                    <div class="carousel-images">
+                        <img src="https://via.placeholder.com/400x300/000000/FFFFFF?text=Nunta+1" alt="Foto 1" class="active">
+                        <img src="https://via.placeholder.com/400x300/333333/FFFFFF?text=Nunta+2" alt="Foto 2">
+                        <img src="https://via.placeholder.com/400x300/555555/FFFFFF?text=Nunta+3" alt="Foto 3">
+                        <img src="https://via.placeholder.com/400x300/777777/FFFFFF?text=Nunta+4" alt="Foto 4">
+                        <img src="https://via.placeholder.com/400x300/999999/FFFFFF?text=Nunta+5" alt="Foto 5">
+                    </div>
+                    <button class="prev" onclick="mutaSlide('carousel-nunta', -1)">&#10094;</button>
+                    <button class="next" onclick="mutaSlide('carousel-nunta', 1)">&#10095;</button>
+                </div>
+
+                <div class="detalii-pret">
+                    <span class="pret">5000 LEI</span>
+                    <ul class="lista-beneficii">
+                        <li>Acoperire completă eveniment</li>
+                        <li>Ședință "Save the Date"</li>
+                        <li>Album Fotocarte Premium</li>
+                    </ul>
+                    <a href="#contact" class="btn-rezerva">Cere Ofertă</a>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <section id="oferte-video" class="content-section">
@@ -50,7 +137,57 @@
     <section id="contact" class="content-section">
         <h2>Contactează-ne</h2>
         <p>Telefon, WhatsApp, Email.</p>
-    </section>
+        </section>
 
+
+    <script>
+        // --- 1. SCRIPT PENTRU MENIUL DE MOBIL (HAMBURGER) ---
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-links");
+
+        // Când dai click pe hamburger, deschide/închide meniul
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Când dai click pe un link din meniu, închide meniul automat
+        document.querySelectorAll(".nav-links li a").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
+
+        // --- 2. SCRIPT PENTRU CARUSEL (SLIDER FOTO) ---
+        function mutaSlide(carouselId, directie) {
+            // Găsim caruselul specific pe care s-a dat click
+            const carousel = document.getElementById(carouselId);
+            const images = carousel.querySelectorAll('.carousel-images img');
+            
+            // Căutăm care poză este activă acum
+            let indexActiv = 0;
+            images.forEach((img, index) => {
+                if (img.classList.contains('active')) {
+                    indexActiv = index;
+                    img.classList.remove('active'); // O ascundem pe cea curentă
+                }
+            });
+
+            // Calculăm următoarea poză
+            let indexNou = indexActiv + directie;
+
+            // Dacă suntem la final și dăm next, mergem la prima (Loop)
+            if (indexNou >= images.length) {
+                indexNou = 0;
+            }
+            // Dacă suntem la prima și dăm back, mergem la ultima
+            if (indexNou < 0) {
+                indexNou = images.length - 1;
+            }
+
+            // Afișăm poza nouă
+            images[indexNou].classList.add('active');
+        }
+    </script>
 </body>
 </html>
