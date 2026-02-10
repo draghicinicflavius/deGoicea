@@ -268,16 +268,25 @@ footer {
     font-weight: bold;
     transition: 0.3s;
 }
+.pret-mare {
+    font-size: 1.8rem;      /* <--- AICI modifici mărimea (era poate 1.8rem) */
+    font-weight: 700;       /* Foarte gros (Bold) */
+    color: #fff;            /* Alb curat */
+    margin-bottom: 20px;    /* Spațiu între preț și buton */
+    display: block;         /* Să fie sigur pe rândul lui */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* O umbră fină să iasă în relief */
+}
 
 /* --- Buton Compact pentru Foto-Video --- */
 .btn-rezerva1 {
-    display: inline-block;
+   display: inline-block;
     
-    /* 1. AICI ESTE SECRETUL: Micsoram spațiul intern */
-    padding: 5px 15px;   /* Era probabil 10px 25px. Acum e mult mai strâns */
+    /* 1. Mărim spațiul din buton */
+    padding: 12px 35px;  
     
-    /* 2. Micsoram puțin scrisul să fie elegant */
-    font-size: 0.75rem;  /* Echivalentul a aprox 12px */
+    /* 2. Mărim scrisul considerabil */
+    font-size: 1.1rem;   /* Aprox 18px (era 12px înainte) */
+    letter-spacing: 1px; /* Spațiu între litere pentru aspect premium */
     
     border: 1px solid #d4af37;
     color: #d4af37;
@@ -285,15 +294,13 @@ footer {
     text-transform: uppercase;
     font-weight: bold;
     transition: 0.3s;
-    
-    /* 3. Ne asigurăm că stă centrat și nu împinge prea tare */
-    margin-left: 10px; 
-    white-space: nowrap; /* Să nu se rupă textul pe două rânduri */
+    margin-top: 15px;
 }
 
 .btn-rezerva1:hover {
     background-color: #d4af37;
     color: #000;
+    box-shadow: 0 0 10px #d4af37
 }
 
 .btn-rezerva:hover {
