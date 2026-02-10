@@ -222,7 +222,7 @@ footer {
 .carousel {
     position: relative;
     width: 100%;
-    height: 250px; /* Înălțimea pozei */
+    height: 450px; /* Înălțimea pozei */
     background-color: #000;
 }
 
@@ -234,7 +234,7 @@ footer {
 .carousel-images img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Umple spațiul fără să deformeze poza */
+    object-fit: contain; /* Umple spațiul fără să deformeze poza */
     display: none; /* Ascundem toate pozele */
 }
 
@@ -250,30 +250,41 @@ footer {
 }
 
 /* Săgețile Stânga/Dreapta */
+/* Săgețile Stânga/Dreapta - STIL NOU */
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
+    top: 0;
+    height: 100%; /* Ocupă toată înălțimea caruselului */
+    width: 50px; /* Zonă de click mai lată */
+    padding: 0;
+    color: rgba(255, 255, 255, 0.5); /* Albe, dar puțin transparente normal */
     font-weight: bold;
-    font-size: 18px;
+    font-size: 30px; /* Săgeată mai mare */
     transition: 0.3s;
     border: none;
-    background-color: rgba(0,0,0,0.3);
+    background-color: transparent; /* Fără fundal de obicei */
     user-select: none;
+    display: flex;
+    align-items: center; /* Centrează săgeata pe verticală */
+    justify-content: center; /* Centrează săgeata pe orizontală în zona ei */
+    z-index: 10; /* Să fie mereu peste poză */
 }
 
+/* Săgeata din Stânga */
+.prev {
+    left: 0; /* Lipită de marginea stângă */
+}
+
+/* Săgeata din Dreapta */
 .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    right: 0; /* Lipită de marginea dreaptă */
 }
 
+/* Când pui mouse-ul pe ele */
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-    color: #d4af37;
+    background-color: rgba(0,0,0,0.5); /* Apare un fundal negru transparent */
+    color: #d4af37; /* Săgeata devine aurie */
 }
 
 /* DETALII PRET */
