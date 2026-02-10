@@ -1,4 +1,4 @@
-/* --- RESETARE --- */
+/* --- 1. RESETARE & GENERAL --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,27 +6,29 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Scroll lin când apeși pe butoane */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #000;
     color: #fff;
+    overflow-x: hidden; /* Previne scroll-ul orizontal nedorit */
 }
 
-/* --- MENIUL DE NAVIGARE (NAVBAR) --- */
+/* --- 2. NAVIGARE (NAVBAR) --- */
 .navbar {
-    position: fixed; /* Rămâne lipit sus */
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    padding: 15px 30px; /* Puțin mai compact */
+    padding: 15px 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo stânga, Meniu dreapta */
     align-items: center;
-    z-index: 1000; /* Deasupra la orice */
-    background: rgba(0, 0, 0, 0.85); /* Negru transparent */
-    backdrop-filter: blur(10px); /* Efect modern de sticlă */
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9); /* Negru aproape opac */
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -35,25 +37,12 @@ body {
     font-weight: bold;
     letter-spacing: 1px;
     color: #fff;
-    /* Am șters 'text-transform: uppercase' ca să te lase să scrii "deGoicea" */
-    text-transform: none; 
+    text-transform: none;
+    z-index: 1002; /* Peste meniul negru de mobil */
 }
 
-/* Stiluri speciale pentru literele colorate */
-.litera-g {
-    color: #d4af37; /* Auriu */
-    font-size: 1.7rem; /* Puțin mai mare pentru accent */
-}
-
-.litera-r {
-    color: #808080; /* Gri */
-    font-size: 1.7rem; /* Puțin mai mare pentru accent */
-}
-
-/* Opțional: Dacă vrei ca tot logo-ul să fie puțin mai mare să se vadă detaliile */
-.logo-text {
-    font-size: 1.3rem; /* Ajustează mărimea aici dacă e nevoie */
-}
+.litera-g { color: #d4af37; font-size: 1.7rem; }
+.litera-r { color: #808080; font-size: 1.7rem; }
 
 .nav-links {
     list-style: none;
@@ -66,27 +55,42 @@ body {
     color: #ddd;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: 0.3s;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: 0.3s;
 }
 
 .nav-links li a:hover {
-    color: #e8b50e; /* Auriu la mouse over */
+    color: #d4af37;
 }
 
-/* --- SECȚIUNEA 1: HERO (DESIGNUL TĂU) --- */
+/* --- 3. HAMBURGER MENU (Ascuns pe Laptop) --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1002; /* Peste meniul care se deschide */
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+/* --- 4. HERO SECTION & ANIMAȚII --- */
 .hero-section {
-    height: 100vh; /* Un ecran complet */
+    height: 100vh;
     width: 100%;
-    position: relative; /* Important ca să țină fundalul în interior */
+    position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* --- FUNDALUL ANIMAT (Setările tale exacte) --- */
 .background-animat {
     position: absolute;
     top: 0;
@@ -94,66 +98,37 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-
     background-image: 
         radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
-        url('images/logo-bg.jpeg'); /* <--- VERIFICĂ AICI NUMELE POZEI */
-    
+        url('images/logo-bg.jpeg'); 
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center center;
-    
     filter: brightness(1.2) contrast(1.1);
-    
-    /* Animația ta fină */
     animation: miscareValuriProfi 8s ease-in-out infinite alternate;
 }
 
 @keyframes miscareValuriProfi {
-    0% {
-        transform: scale(0.95) translateY(5px);
-    }
-    100% {
-        transform: scale(1.05) translateY(-5px);
-    }
-}
-
-/* --- CONȚINUT HERO --- */
-.container-continut {
-    text-align: center;
-    z-index: 10;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-}
-
-p {
-    font-size: 1.3rem;
-    color: #ddd;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    0% { transform: scale(0.95) translateY(5px); }
+    100% { transform: scale(1.05) translateY(-5px); }
 }
 
 footer {
     position: absolute;
     bottom: 30px;
-    left: 0;  /* <--- ASTA ERA PROBLEMA! Fără asta, nu știa de unde să înceapă */
+    left: 0;
     width: 100%;
     text-align: center;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.5);
     letter-spacing: 2px;
     text-transform: uppercase;
-    z-index: 20; /* Îl aducem în față de tot */
+    z-index: 20;
 }
 
-/* --- RESTUL SECȚIUNILOR (Ca să ai scroll) --- */
+/* --- 5. SECȚIUNI GENERALE --- */
 .content-section {
-    min-height: 100vh;
+    min-height: 100vh; /* O secțiune = Un ecran */
     padding: 100px 20px;
     border-bottom: 1px solid #111;
     display: flex;
@@ -166,30 +141,16 @@ footer {
 
 .content-section h2 {
     font-size: 2.5rem;
-    color: #d4af37; /* Titlu auriu */
+    color: #d4af37;
     margin-bottom: 20px;
 }
 
-/* --- ADAPTARE PENTRU TELEFON --- */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 15px;
-    }
-    .nav-links {
-        margin-top: 15px;
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    h1 { font-size: 2rem; }
-}
-/* --- OFERTE & CARUSEL --- */
+/* --- 6. PACHETE & CARUSEL --- */
 .oferte-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px; /* Spațiu între pachete */
+    gap: 40px;
     margin-top: 30px;
     width: 100%;
 }
@@ -199,14 +160,14 @@ footer {
     border: 1px solid #333;
     border-radius: 10px;
     width: 100%;
-    max-width: 350px; /* Lățimea unui card */
+    max-width: 350px;
     overflow: hidden;
     transition: 0.3s;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .pachet-card:hover {
-    transform: translateY(-5px); /* Se ridică puțin la mouse over */
+    transform: translateY(-5px);
     border-color: #d4af37;
 }
 
@@ -218,11 +179,11 @@ footer {
     border-bottom: 1px solid #222;
 }
 
-/* CARUSEL LOGICA */
+/* STIL CARUSEL (POZE) */
 .carousel {
     position: relative;
     width: 100%;
-    height: 450px; /* Înălțimea pozei */
+    height: 450px; /* Înalt pentru poze portret */
     background-color: #000;
 }
 
@@ -234,14 +195,13 @@ footer {
 .carousel-images img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Umple spațiul fără să deformeze poza */
-    display: none; /* Ascundem toate pozele */
+    object-fit: contain; /* Se vede toată poza, netăiată */
+    display: none;
 }
 
-/* Doar poza cu clasa 'active' se vede */
 .carousel-images img.active {
     display: block;
-    animation: fadeEffect 0.5s; /* Efect de tranziție fină */
+    animation: fadeEffect 0.5s;
 }
 
 @keyframes fadeEffect {
@@ -249,45 +209,34 @@ footer {
     to {opacity: 1}
 }
 
-/* Săgețile Stânga/Dreapta */
-/* Săgețile Stânga/Dreapta - STIL NOU */
+/* BUTOANE SĂGEȚI (Full Height) */
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 0;
-    height: 100%; /* Ocupă toată înălțimea caruselului */
-    width: 50px; /* Zonă de click mai lată */
-    padding: 0;
-    color: rgba(255, 255, 255, 0.5); /* Albe, dar puțin transparente normal */
+    height: 100%;
+    width: 50px;
+    color: rgba(255, 255, 255, 0.5);
     font-weight: bold;
-    font-size: 30px; /* Săgeată mai mare */
-    transition: 0.3s;
+    font-size: 30px;
     border: none;
-    background-color: transparent; /* Fără fundal de obicei */
-    user-select: none;
+    background-color: transparent;
     display: flex;
-    align-items: center; /* Centrează săgeata pe verticală */
-    justify-content: center; /* Centrează săgeata pe orizontală în zona ei */
-    z-index: 10; /* Să fie mereu peste poză */
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: 0.3s;
 }
 
-/* Săgeata din Stânga */
-.prev {
-    left: 0; /* Lipită de marginea stângă */
-}
+.prev { left: 0; }
+.next { right: 0; }
 
-/* Săgeata din Dreapta */
-.next {
-    right: 0; /* Lipită de marginea dreaptă */
-}
-
-/* Când pui mouse-ul pe ele */
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.5); /* Apare un fundal negru transparent */
-    color: #d4af37; /* Săgeata devine aurie */
+    background-color: rgba(0,0,0,0.6);
+    color: #d4af37;
 }
 
-/* DETALII PRET */
+/* PREȚ & BUTON */
 .detalii-pret {
     padding: 20px;
     text-align: center;
@@ -299,14 +248,6 @@ footer {
     font-weight: bold;
     color: #fff;
     margin-bottom: 15px;
-}
-
-.lista-beneficii {
-    list-style: none;
-    margin-bottom: 20px;
-    color: #ccc;
-    font-size: 0.9rem;
-    line-height: 1.6;
 }
 
 .btn-rezerva {
@@ -324,70 +265,47 @@ footer {
     background-color: #d4af37;
     color: #000;
 }
-/* --- HAMBURGER MENU (STILIZARE) --- */
-.hamburger {
-    display: none; /* Pe Laptop e ASCUNS default */
-    cursor: pointer;
-}
 
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background-color: white; /* Culoarea liniilor */
-}
-
-/* --- REGULA PENTRU TELEFON (MEDIA QUERY) --- */
+/* --- 7. REGULI SPECIALE PENTRU TELEFON (IMPORTANT!) --- */
 @media (max-width: 768px) {
-    
-    /* 1. Arătăm Hamburgerul */
+    /* Facem vizibil butonul cu 3 linii */
     .hamburger {
-        display: block; /* Îl facem VIZIBIL */
-        position: absolute;
-        right: 20px;
-        top: 20px;
+        display: block;
     }
 
-    /* 2. Ascundem meniul normal și îl pregătim să vină din lateral */
+    /* Ascundem meniul normal și îl facem pe tot ecranul */
     .nav-links {
         position: fixed;
-        left: -100%; /* Ascuns în afara ecranului (stânga) */
+        left: -100%; /* Ascuns complet în stânga */
         top: 0;
-        gap: 0;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.95); /* Fundal negru aproape opac */
+        flex-direction: column; /* Link-uri unul sub altul */
+        background-color: #000; /* Fundal Negru */
         width: 100%;
-        height: 100%; /* Tot ecranul */
+        height: 100vh; /* Tot ecranul */
         text-align: center;
-        justify-content: center; /* Centrat vertical */
+        justify-content: center;
         transition: 0.3s;
-        z-index: 1000; /* Să fie peste tot */
+        padding-top: 60px;
     }
 
-    /* 3. Când meniul e activ (deschis) */
+    /* Când apăsăm pe buton, meniul vine pe ecran */
     .nav-links.active {
-        left: 0; /* Vine pe ecran */
+        left: 0;
     }
 
-    /* Stil pentru link-uri pe telefon */
     .nav-links li {
-        margin: 16px 0;
-    }
-    
-    .nav-links li a {
-        font-size: 1.5rem; /* Text mai mare pe telefon */
+        margin: 20px 0;
     }
 
-    /* Animația X (Opțional) */
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
+    .nav-links li a {
+        font-size: 1.5rem; /* Scris mare pe telefon */
     }
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
+
+    /* Animația X pentru buton */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    
+    /* Ajustare text Hero pe telefon */
+    h1 { font-size: 2rem; }
 }
