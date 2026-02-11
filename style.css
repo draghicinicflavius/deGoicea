@@ -355,6 +355,40 @@ footer {
 .lista-preturi {
     padding: 0 10px;
 }
+/* --- STILURI PENTRU PALETARUL DE CULORI --- */
+.grid-culori {
+    display: flex;
+    flex-wrap: wrap;        /* Dacă nu au loc, trec pe rândul următor */
+    justify-content: center; /* Le centrează */
+    gap: 15px;              /* Spațiu între poze */
+}
+
+.grid-culori img {
+    width: 30%;             /* Pe laptop: 3 poze pe rând (30% + spațiu) */
+    max-width: 300px;       /* Să nu fie uriașe */
+    border-radius: 8px;     /* Colțuri rotunjite */
+    transition: transform 0.3s ease; /* Efect fin la hover */
+    border: 2px solid #333; /* Un chenar închis să arate bine pe fundal negru */
+}
+
+.grid-culori img:hover {
+    transform: scale(1.05); /* Se măresc puțin când pui mouse-ul */
+    border-color: #d4af37;  /* Chenarul devine auriu */
+    z-index: 2;
+}
+
+/* Pe telefon, le punem mai mari, câte 2 pe rând sau 1 */
+@media (max-width: 768px) {
+    .grid-culori img {
+        width: 45%; /* Două pe rând pe tabletă/mobil mare */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-culori img {
+        width: 100%; /* Una sub alta pe telefoane mici, să se vadă clar */
+    }
+}
 
 
 /* --- 9. REGULI SPECIALE PENTRU TELEFON --- */
