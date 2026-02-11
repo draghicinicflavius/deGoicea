@@ -372,7 +372,7 @@ footer {
 }
 
 .grid-culori img:hover {
-    transform: scale(1.05); /* Se măresc puțin când pui mouse-ul */
+    transform: scale(2); /* Se măresc puțin când pui mouse-ul */
     border-color: #d4af37;  /* Chenarul devine auriu */
     z-index: 2;
 }
