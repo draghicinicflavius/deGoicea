@@ -372,9 +372,30 @@ footer {
 }
 
 .grid-culori img:hover {
-    transform: scale(2); /* Se măresc puțin când pui mouse-ul */
+    transform: scale(1.3); /* Se măresc puțin când pui mouse-ul */
     border-color: #d4af37;  /* Chenarul devine auriu */
     z-index: 2;
+}
+/* --- STIL PENTRU SEMNĂTURA DE JOS --- */
+/* --- SEMNĂTURA DE LA CONTACT --- */
+/* --- SEMNĂTURA VIZIBILĂ ȘI CENTRATĂ --- */
+.semnatura-vizibila {
+    margin-top: 60px; 
+    padding-bottom: 50px;      /* Spațiu mai mare deasupra */
+    font-size: 1.3rem;      /* Scris MARE (era 1rem, acum e cu 50% mai mare) */
+    color: #fff;            /* Alb, să se vadă clar pe negru */
+    font-weight: 600;       /* Puțin mai gros */
+    
+    text-align: center;     /* CENTRARE OBLIGATORIE */
+    width: 100%;            /* Să ocupe tot rândul ca să se poată centra */
+    display: block;         /* Asigură că stă pe rândul lui */
+    letter-spacing: 1px;    /* Spațiu între litere pentru eleganță */
+}
+
+.nume-autor {
+    color: #d4af37;         /* Numele tău rămâne auriu */
+    font-weight: bold;      
+    font-size: 1.5rem;      /* Numele tău un pic mai mare decât restul textului */
 }
 
 /* Pe telefon, le punem mai mari, câte 2 pe rând sau 1 */
