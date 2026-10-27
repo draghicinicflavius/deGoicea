@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -43,7 +43,7 @@
 
     <section id="home" class="hero-section">
         <div class="background-animat"></div>
-        <footer>by Flavius Drăghici</footer>
+        <div class="hero-footer">Toate drepturile rezervate de <a href="https://www.flatech.ro" target="_blank" rel="noopener noreferrer">FLATECH IT SOLUTIONS</a></div>
     </section>
 
     <section id="oferte-foto" class="content-section">
@@ -281,30 +281,134 @@
     </div>
 </section>
 
-    <section id="contact" class="content-section">
-        <h2>Contactează-ne</h2>
-        <p>Telefon, WhatsApp, Facebook.</p>
-        
-        <div class="social-buttons" style="margin-top: 30px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <a href="tel:+40757742202" class="btn-contact" style="text-decoration: none; padding: 15px 30px; border: 1px solid #d4af37; color: #d4af37; font-weight: bold; text-transform: uppercase;">
-                Sună-ne
-            </a>
-            <a href="https://wa.me/40757742202" class="btn-contact" style="text-decoration: none; padding: 15px 30px; border: 1px solid #d4af37; color: #d4af37; font-weight: bold; text-transform: uppercase;">
-                WhatsApp
-            </a>
-            <a href="https://instagram.com/degoicea" class="btn-contact" style="text-decoration: none; padding: 15px 30px; border: 1px solid #d4af37; color: #d4af37; font-weight: bold; text-transform: uppercase;">
-                 Instagram
-            </a>
-            <a href="https://www.facebook.com/goiceaR?locale=ro_RO" class="btn-contact" style="text-decoration: none; padding: 15px 30px; border: 1px solid #d4af37; color: #d4af37; font-weight: bold; text-transform: uppercase;">
-                 facebook
-            </a>
+        <section id="contact" class="content-section">
+        <div class="contact-section-wrapper">
+            <h2>Contactează-ne</h2>
+            <p class="contact-subtitle">Suntem aici pentru a transforma evenimentul tău într-o amintire memorabilă. Alege canalul preferat pentru a intra în legătură directă cu noi:</p>
+            
+            <div class="contact-grid">
+                <!-- Card Telefon -->
+                <a href="tel:+40757742202" class="contact-card" aria-label="Apelează telefonic deGoicea">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-card-content">
+                        <span class="contact-card-tag">Apel Rapid</span>
+                        <h3 class="contact-card-title">Sună-ne</h3>
+                        <span class="contact-card-detail">+40 757 742 202</span>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Card WhatsApp -->
+                <a href="https://wa.me/40757742202" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Mesaj pe WhatsApp">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.276-.1-.476-.15-.677.15-.2.301-.777.979-.953 1.18-.175.2-.351.226-.652.075-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.785-1.675-2.086-.176-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.176.2-.301.301-.502.1-.2.05-.376-.025-.527-.075-.15-.677-1.631-.928-2.235-.244-.588-.492-.508-.677-.518l-.578-.01c-.2 0-.526.075-.802.376s-1.053 1.028-1.053 2.508c0 1.48 1.078 2.909 1.229 3.109.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.634.721.229 1.377.197 1.896.119.579-.087 1.78-.727 2.031-1.43.25-.703.25-1.306.175-1.431-.075-.125-.276-.201-.577-.351zM12.04 2C6.51 2 2.02 6.49 2.02 12.02c0 1.8.48 3.55 1.39 5.09L2 22l5.03-1.32a10.007 10.007 0 0 0 5.01 1.34c5.53 0 10.02-4.49 10.02-10.02C22.06 6.49 17.57 2 12.04 2z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-card-content">
+                        <span class="contact-card-tag">Mesaj Instant</span>
+                        <h3 class="contact-card-title">WhatsApp</h3>
+                        <span class="contact-card-detail">Răspundem Rapid</span>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Card Instagram -->
+                <a href="https://instagram.com/degoicea" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Profil Instagram deGoicea">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </div>
+                    <div class="contact-card-content">
+                        <span class="contact-card-tag">Portofoliu Foto</span>
+                        <h3 class="contact-card-title">Instagram</h3>
+                        <span class="contact-card-detail">@degoicea</span>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Card Facebook -->
+                <a href="https://www.facebook.com/goiceaR?locale=ro_RO" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Pagină Facebook Radu Goicea">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-card-content">
+                        <span class="contact-card-tag">Comunitate & Recenzii</span>
+                        <h3 class="contact-card-title">Facebook</h3>
+                        <span class="contact-card-detail">Radu Goicea</span>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
-</section>
-              
-</div> <div class="semnatura-vizibila">
-        Created BY <span class="nume-autor">Flavius Drăghici</span>
+    <!-- ================= FOOTER COMPLET ================= -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">deGoicea Photo<span class="litera-g">G</span><span class="litera-r">R</span>aphy</span>
+                <p class="footer-tagline">Servicii Foto-Video Profesionale, Cabina Foto Photobooth & Albume de Lux</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="termeni.html">Termeni și Condiții</a>
+                <span class="footer-separator">•</span>
+                <a href="confidentialitate.html">Politica de Confidențialitate (GDPR)</a>
+                <span class="footer-separator">•</span>
+                <a href="confidentialitate.html#cookie-uri">Politica de Cookie-uri</a>
+            </div>
+            
+            <div class="anpc-banners">
+                <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer" class="anpc-link" title="Soluționarea Alternativă a Litigiilor">
+                    <img src="images/anpc-sal.png" alt="Soluționarea Alternativă a Litigiilor" class="anpc-img">
+                </a>
+                <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" class="anpc-link" title="Soluționarea Online a Litigiilor">
+                    <img src="images/anpc-sol.png" alt="Soluționarea Online a Litigiilor" class="anpc-img">
+                </a>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2026 deGoicea Photography. Toate drepturile rezervate.</p>
+            </div>
+            
+            <div class="developer-credit">
+                <p>Toate drepturile rezervate de <a href="https://www.flatech.ro" target="_blank" rel="noopener noreferrer" class="flatech-link">FLATECH IT SOLUTIONS</a> &bull; <a href="https://www.flatech.ro" target="_blank" rel="noopener noreferrer" class="flatech-url">www.flatech.ro</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= BANNER COOKIE-URI ================= -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>Acest site folosește cookie-uri pentru a vă oferi o experiență optimă de navigare. Continuând navigarea, sunteți de acord cu <a href="confidentialitate.html#cookie-uri">Politica de Cookie-uri</a>.</p>
+            <button id="accept-cookies" class="cookie-btn">Am înțeles</button>
+        </div>
     </div>
 
     <script>
@@ -367,7 +471,24 @@
                 }));
             }
         });
-    </script>
+    
+        // --- 3. SCRIPT PENTRU BANNERUL DE COOKIE-URI ---
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookieBanner = document.getElementById("cookie-banner");
+            const acceptBtn = document.getElementById("accept-cookies");
+
+            if (cookieBanner && acceptBtn) {
+                if (!localStorage.getItem("degoicea_cookies_accepted")) {
+                    cookieBanner.style.display = "block";
+                }
+
+                acceptBtn.addEventListener("click", function() {
+                    localStorage.setItem("degoicea_cookies_accepted", "true");
+                    cookieBanner.style.display = "none";
+                });
+            }
+        });
+</script>
     <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>

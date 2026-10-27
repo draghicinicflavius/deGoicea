@@ -113,17 +113,27 @@ body {
     100% { transform: scale(1.05) translateY(-5px); }
 }
 
-footer {
+.hero-footer {
     position: absolute;
     bottom: 30px;
     left: 0;
     width: 100%;
     text-align: center;
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.6);
     letter-spacing: 2px;
     text-transform: uppercase;
     z-index: 20;
+}
+.hero-footer a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.hero-footer a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
 }
 
 /* --- 5. SECȚIUNI GENERALE --- */
@@ -449,4 +459,485 @@ footer {
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     
     h1 { font-size: 2rem; }
+}/* ==========================================================
+   --- 10. BUTOANE DE CONTACT INTERACTIVE & MODERNE ---
+   ========================================================== */
+.contact-section-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
+
+.contact-subtitle {
+    color: #bbb;
+    font-size: 1.05rem;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto 0 auto;
+    padding: 0 10px;
+}
+
+.contact-card {
+    position: relative;
+    background: linear-gradient(145deg, #161616, #0e0e0e);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 16px;
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+}
+
+/* Efect de reflexie/shimmer animat */
+.contact-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.18), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.75s ease;
+}
+
+.contact-card:hover::before {
+    left: 120%;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px) scale(1.02);
+    border-color: #d4af37;
+    background: linear-gradient(145deg, #1c1c1c, #121212);
+    box-shadow: 0 16px 36px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.contact-card:active {
+    transform: translateY(-2px) scale(1.005);
+}
+
+/* Iconița contact */
+.contact-card-icon {
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+    transition: all 0.35s ease;
+}
+
+.contact-card-icon svg {
+    width: 26px;
+    height: 26px;
+    transition: transform 0.35s ease;
+}
+
+.contact-card:hover .contact-card-icon {
+    background: #d4af37;
+    color: #000;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.contact-card:hover .contact-card-icon svg {
+    transform: scale(1.15) rotate(6deg);
+}
+
+/* Conținut text */
+.contact-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contact-card-tag {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #d4af37;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.contact-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.contact-card-detail {
+    font-size: 0.88rem;
+    color: #aaa;
+    margin-top: 4px;
+    transition: color 0.3s ease;
+}
+
+.contact-card:hover .contact-card-detail {
+    color: #f1f1f1;
+}
+
+/* Săgeata indicator */
+.contact-card-arrow {
+    flex-shrink: 0;
+    color: #d4af37;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.contact-card-arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-card:hover .contact-card-arrow {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+/* ==========================================================
+   --- 11. FOOTER COMPLET DE LUX (FLATECH IT SOLUTIONS & ANPC) ---
+   ========================================================== */
+.site-footer {
+    position: relative;
+    background: #080808;
+    border-top: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 50px 20px 30px 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 60px;
+    z-index: 10;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.footer-brand {
+    margin-bottom: 5px;
+}
+
+.footer-logo {
+    font-size: 1.45rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #fff;
+}
+
+.footer-tagline {
+    font-size: 0.88rem;
+    color: #888;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.footer-links a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    background: rgba(212, 175, 55, 0.15);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.footer-separator {
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* Bannere ANPC */
+.anpc-banners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin: 15px 0;
+}
+
+.anpc-link {
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.anpc-img {
+    max-width: 240px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.anpc-link:hover .anpc-img {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(212, 175, 55, 0.35);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+@media (min-width: 768px) {
+    .anpc-banners {
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: #777;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 15px;
+    width: 100%;
+}
+
+.developer-credit {
+    font-size: 0.95rem;
+    color: #999;
+    letter-spacing: 0.5px;
+}
+
+.flatech-link {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.flatech-link:hover {
+    color: #fff;
+    background: rgba(212, 175, 55, 0.2);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+.flatech-url {
+    color: #aaa;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.flatech-url:hover {
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+/* ==========================================================
+   --- 12. PAGINI LEGALE (TERMENI & CONFIDENȚIALITATE) ---
+   ========================================================== */
+.legal-page-header {
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.legal-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.legal-back-btn:hover {
+    background: #d4af37;
+    color: #000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.legal-section {
+    padding: 60px 20px 80px 20px;
+    background-color: #000;
+    color: #e0e0e0;
+    min-height: 80vh;
+}
+
+.legal-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #0d0d0d;
+    padding: 45px 40px;
+    border-radius: 14px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.legal-container h1 {
+    color: #d4af37;
+    font-size: 2.3rem;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.legal-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding-bottom: 20px;
+}
+
+.legal-container h2 {
+    color: #d4af37;
+    font-size: 1.35rem;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    border-left: 3px solid #d4af37;
+    padding-left: 12px;
+}
+
+.legal-container p, .legal-container li {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 14px;
+    text-align: justify;
+}
+
+.legal-container ul {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+.legal-container strong {
+    color: #fff;
+}
+
+.legal-container a {
+    color: #d4af37;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.legal-container a:hover {
+    color: #fff;
+}
+
+/* ==========================================================
+   --- 13. BANNER COOKIE-URI ---
+   ========================================================== */
+.cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 620px;
+    margin: 0 auto;
+    background: rgba(18, 18, 18, 0.96);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 12px;
+    padding: 18px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.2);
+    z-index: 9999;
+}
+
+.cookie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    text-align: center;
+}
+
+.cookie-content p {
+    font-size: 0.9rem;
+    color: #ddd;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.cookie-content a {
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+.cookie-btn {
+    background: #d4af37;
+    color: #000;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cookie-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+@media (min-width: 600px) {
+    .cookie-content {
+        flex-direction: row;
+        text-align: left;
+    }
+    .cookie-btn {
+        flex-shrink: 0;
+    }
+}
+
